@@ -18,7 +18,7 @@ import com.iCo6.system.Accounts;
 public class Magnata extends JavaPlugin{
 
 	
-	
+	public static String mag;
 	private static Accounts acc;
 	@Override
 	public void onEnable() {

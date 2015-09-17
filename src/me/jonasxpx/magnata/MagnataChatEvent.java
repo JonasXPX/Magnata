@@ -9,7 +9,7 @@ public class MagnataChatEvent implements Listener{
 
 	@EventHandler
 	public void magnataChatEvent(ChatMessageEvent e){
-		if(e.getSender().getName().equalsIgnoreCase(Magnata.getMoneyTop())){
+		if(e.getSender().getName().equalsIgnoreCase(Magnata.mag)){
 			e.setTagValue("magnata", "§2§o[Magnata]");
 		}
 	}
