@@ -7,6 +7,10 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 public class MagnataLoginEvent implements Listener{
 
+	
+	/**
+	 * @param e Evento chamado durante a entrada do Magnata ao servidor e anuncia
+	 */
 	@EventHandler
 	public void magnataLoginEvent(final PlayerJoinEvent e){
 		new Thread(new Runnable() {
@@ -21,7 +25,6 @@ public class MagnataLoginEvent implements Listener{
 							+ "§2|§2§m-----------------------------------------\n");
 					Magnata.mag = e.getPlayer().getName();
 				}
-				
 			}
 		}).start();
 	}

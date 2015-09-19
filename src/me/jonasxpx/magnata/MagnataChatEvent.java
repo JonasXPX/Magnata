@@ -7,6 +7,10 @@ import br.com.devpaulo.legendchat.api.events.ChatMessageEvent;
 
 public class MagnataChatEvent implements Listener{
 
+	/**
+	 * 
+	 * @param e Evento que recupera o nick do Magnata e adiciona sua tag.
+	 */
 	@EventHandler
 	public void magnataChatEvent(ChatMessageEvent e){
 		if(e.getSender().getName().equalsIgnoreCase(Magnata.mag)){

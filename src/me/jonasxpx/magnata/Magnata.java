@@ -4,7 +4,6 @@ import java.util.logging.Level;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.iCo6.system.Account;
 import com.iCo6.system.Accounts;
 
 /**
@@ -17,11 +16,18 @@ import com.iCo6.system.Accounts;
  */
 public class Magnata extends JavaPlugin{
 
-	
+	/**
+	 * Variavel para armazenar o nick do Magnata
+	 */
 	public static String mag;
+	
 	private static Accounts acc;
+	
 	@Override
 	public void onEnable() {
+		/*
+		 * Verifica se o plugin iConomy esta ativo no servidor, caso não, ele ira desativar o plugin.
+		 */
 		if(getServer().getPluginManager().getPlugin("iConomy") == null){
 			getLogger().log(Level.SEVERE, "iConomy not found! plugin Disabled");
 			getServer().getPluginManager().disablePlugin(this);
@@ -34,8 +40,10 @@ public class Magnata extends JavaPlugin{
 		getServer().getPluginManager().registerEvents(new MagnataLoginEvent(), this);
 	}
 	
+	/**
+	 * @return Retorna o nick do jogador mais rico do servidor.
+	 */
 	public static String getMoneyTop(){
-		Account acc1 = acc.getTopAccounts(1).get(0);
-		return acc1.name;
+		return acc.getTopAccounts(1).get(0).name;
 	}
 }
